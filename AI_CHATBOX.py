@@ -222,8 +222,22 @@ def execute_calculator(message):
 
     try:
 
-        result = calculate(
+        import re
+
+        # Extract a mathematical expression from natural language.
+        match = re.search(
+            r"[-+]?\d+(?:\.\d+)?(?:\s*[\+\-\*/%\^]\s*[-+]?\d+(?:\.\d+)?)+",
             message
+        )
+
+        expression = (
+            match.group(0)
+            if match
+            else message.strip()
+        )
+
+        result = calculate(
+            expression
         )
 
         if (
@@ -241,7 +255,6 @@ def execute_calculator(message):
             "I could not calculate that expression. "
             f"{error}"
         )
-
 
 # ============================================================
 # TIME
