@@ -1,79 +1,57 @@
-# ALEPHZERO Local AI Engineering Platform
+# ALEPHZERO — Local AI Engineering Platform
 
-ALEPHZERO is a local AI engineering platform built with Python, FastAPI and Ollama.
+> A local-first AI engineering platform combining LLM inference, agent routing, tool execution, RAG, API integration, memory, observability and MLOps foundations.
 
-It demonstrates local LLM inference, agent routing, tool execution, API integration, Retrieval-Augmented Generation (RAG), memory, observability and MLOps foundations.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black)
+![Mistral](https://img.shields.io/badge/LLM-Mistral-orange)
+![RAG](https://img.shields.io/badge/AI-RAG-purple)
+![MLOps](https://img.shields.io/badge/MLOps-Foundations-red)
 
-## Core Architecture
+---
 
-User
-?
-FastAPI API
-?
-Agent Router
-+-- Calculator
-+-- System Information
-+-- Time
-+-- External API
-+-- RAG
-+-- General AI
-?
-Model Gateway
-?
-Ollama
-?
-Mistral
+## Overview
 
-## Technologies
+ALEPHZERO is a locally hosted AI engineering platform designed to demonstrate how modern AI systems can be built by combining a Large Language Model with deterministic tools, retrieval, APIs, memory and operational monitoring.
 
-- Python
-- FastAPI
-- Ollama
-- Mistral
-- RAG
-- REST APIs
-- SQLite / JSON memory
-- PowerShell
-- Git / GitHub
+Rather than functioning as a simple chatbot, ALEPHZERO uses an **agent-routing architecture** to determine how each request should be processed.
 
-## Project Status
+---
 
-Version: 3.0.0
+## Architecture
 
-Current capabilities:
-
-- Local LLM inference
-- Agent routing
-- Calculator tool
-- System information tool
-- Time tool
-- External API integration
-- RAG
-- Conversation memory
-- Metrics and telemetry
-- Vision model integration
-- MLOps foundations
-
-## Running
-
-Activate the environment:
-
-    .\sentinel_env\Scripts\Activate.ps1
-
-Start the server:
-
-    py -m uvicorn AI_CHATBOX:app --host 127.0.0.1 --port 8000
-
-Web UI:
-
-    http://127.0.0.1:8000/
-
-API documentation:
-
-    http://127.0.0.1:8000/docs
-
-## Repository
-
-GitHub:
-
-https://github.com/macapoly/alephzero-local-ai-platform
+```text
+                         USER
+                          │
+                          ▼
+                   ┌─────────────┐
+                   │   FastAPI   │
+                   │     API     │
+                   └──────┬──────┘
+                          │
+                          ▼
+                   ┌─────────────┐
+                   │    Agent    │
+                   │   Router    │
+                   └──────┬──────┘
+                          │
+          ┌───────────────┼────────────────┐
+          │               │                │
+          ▼               ▼                ▼
+     ┌─────────┐     ┌─────────┐     ┌─────────┐
+     │  Tools  │     │   RAG   │     │ General │
+     │         │     │         │     │   AI    │
+     └────┬────┘     └────┬────┘     └────┬────┘
+          │               │                │
+          └───────────────┼────────────────┘
+                          ▼
+                  ┌──────────────┐
+                  │ Model Gateway│
+                  └──────┬───────┘
+                         │
+                         ▼
+                    ┌─────────┐
+                    │ Ollama  │
+                    │ Mistral │
+                    └─────────┘
