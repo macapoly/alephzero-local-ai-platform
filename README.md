@@ -15,6 +15,28 @@ Endpoint| Method| Purpose
 "/vision"| POST| Multimodal image analysis
 "/api/test"| POST| API integration testing
 
+---
+
+Screenshots
+
+API — Swagger UI
+
+The FastAPI Swagger interface exposes the platform's API surface, including health checks, telemetry, tools, text interaction, vision, and API integration.
+
+"ALEPHZERO API — Swagger UI" (docs/swagger-api.png)
+
+Agent Routing — Chat
+
+A live "/chat" request demonstrating natural-language input being routed to the appropriate tool and returned through the API.
+
+"ALEPHZERO Agent Routing" (docs/chat-agent-routing.png)
+
+Runtime Telemetry
+
+ALEPHZERO exposes runtime metrics for monitoring request volume, success rate, latency, and other operational signals.
+
+"ALEPHZERO Runtime Metrics" (docs/runtime-metrics.png)
+
 Chat
 
 Send a natural-language request through the "/chat" endpoint.
