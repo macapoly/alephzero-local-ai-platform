@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+sentinel_env/
+venv/
+.venv/
+
+# Environment / secrets
+.env
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local telemetry / runtime data
+data/*.jsonl
+data/*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local model files
+*.gguf
+*.bin
+*.safetensors
+models/
+
+# Temporary files
+*.tmp
+*.bak
+tmp/
+temp/
+
+# Project backup files
+AI_CHATBOX_backup_*.py

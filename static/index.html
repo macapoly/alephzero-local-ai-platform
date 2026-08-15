@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ALEPHZERO AI Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                A
+            </div>
+
+            <div>
+
+                <h1>ALEPHZERO</h1>
+
+                <span>
+                    AI Assistant
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            id="newChatButton"
+            class="new-chat-button"
+        >
+            + New chat
+        </button>
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                SYSTEM
+            </div>
+
+            <div class="system-status">
+
+                <span
+                    id="statusDot"
+                    class="status-dot"
+                ></span>
+
+                <span id="statusText">
+                    Checking system...
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="sidebar-section">
+
+            <div class="sidebar-title">
+                CAPABILITIES
+            </div>
+
+            <div class="capability">
+                Agent Routing
+            </div>
+
+            <div class="capability">
+                API Integration
+            </div>
+
+            <div class="capability">
+                Vision
+            </div>
+
+            <div class="capability">
+                MLOps
+            </div>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="model-info">
+
+                <span>MODEL</span>
+
+                <strong>
+                    Local AI
+                </strong>
+
+            </div>
+
+            <div class="model-info">
+
+                <span>ENGINE</span>
+
+                <strong>
+                    Ollama
+                </strong>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="chat-container">
+
+        <header class="chat-header">
+
+            <div>
+
+                <h2>
+                    ALEPHZERO
+                </h2>
+
+                <p>
+                    Your local AI assistant
+                </p>
+
+            </div>
+
+            <div class="connection">
+
+                <span
+                    id="headerStatusDot"
+                    class="status-dot"
+                ></span>
+
+                <span id="headerStatus">
+                    Online
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <section
+            id="messages"
+            class="messages"
+        >
+
+            <div class="message assistant-message">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="message-content">
+
+                    <div class="message-name">
+                        ALEPHZERO
+                    </div>
+
+                    <div class="message-text">
+
+                        <p>
+                            Hello. I'm ALEPHZERO.
+                        </p>
+
+                        <p>
+                            I can work with local AI,
+                            tools, APIs and images.
+                        </p>
+
+                        <p>
+                            How can I help you?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div
+            id="typingIndicator"
+            class="typing-indicator hidden"
+        >
+
+            <div class="avatar">
+                A
+            </div>
+
+            <div class="typing-bubble">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+        <section class="input-area">
+
+            <div
+                id="imagePreview"
+                class="image-preview hidden"
+            >
+
+                <img
+                    id="previewImage"
+                    alt="Selected image"
+                >
+
+                <button
+    id="removeImage"
+    type="button"
+>
+    ×
+</button>
+
+            </div>
+
+
+            <div class="input-wrapper">
+
+                <button
+    id="imageButton"
+    class="image-button"
+    title="Upload image"
+    type="button"
+>
+    📎
+</button>
+
+                <input
+                    id="imageInput"
+                    type="file"
+                    accept="image/*"
+                    hidden
+                >
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Message ALEPHZERO..."
+                    rows="1"
+                ></textarea>
+
+                <button
+                    id="sendButton"
+                    class="send-button"
+                    title="Send message"
+                    type="button"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+            <div class="input-hint">
+
+                ALEPHZERO runs locally on your computer.
+
+                <span>
+                    Enter to send • Shift + Enter for new line
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
